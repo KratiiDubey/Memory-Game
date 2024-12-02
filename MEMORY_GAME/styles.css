@@ -1,0 +1,235 @@
+html, body 
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(emoji.jpg); 
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.head
+{
+    font-family: Harrington;
+    font-size: 30pt;
+    color: #5C4033;  
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.game 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controls
+{
+    display: flex;
+    gap: 20px;
+}
+
+#btn 
+{
+    background: #8b73be; /*color of the start button */
+    color: white;  
+    border-radius: 18%;
+    width: 35%;
+    height:50%; 
+    margin-top: 300px;
+    padding: 15px 32px;
+    border: 0;
+    cursor: pointer;
+    font-family: Harrington;
+    font-size: 18pt;
+    font-weight: bold;
+    box-shadow: 0 5px #5F5D9C;
+    overflow: hidden;
+    transition-duration: 0.4s;
+}
+
+#btn:active 
+{
+    background-color: #8f79bd;
+    box-shadow: 0 5px #8b73be;
+    transform: translateY(4px);
+}
+  
+#btn:after 
+{
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.8s
+}
+  
+#btn:active:after 
+{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}  
+
+.disabled 
+{
+    color: #757575;
+}
+
+.stats 
+{
+    background: #8b73be;
+    color: white;
+    border-radius:10%;
+    width: 50%;
+    height:50%;
+    margin-top: 300px;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+    font-family: Harrington;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+#btn:hover, .stats:hover
+{
+    color: #8b73be;
+    background: #8b73be; /*after hover color of button */
+    color: floralwhite;
+    box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.24), 0 15px 45px 0 rgba(0,0,0,0.19);
+}
+
+.board-container 
+{
+    position: relative;
+}
+
+.board, .win 
+{
+    border-radius: 9px;
+    margin-bottom: 100px;
+    height: 50%;
+    width: 100%;
+    box-shadow: 0 50px 50px rgba(70, 69, 69, 0.25);
+    background: linear-gradient(45deg, #8b73be 10%, #CA5FA6 70%, #986498  100%);
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.board 
+{
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 240px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 15px;
+}
+
+.board-container.flipped .board 
+{
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.board-container.flipped .win 
+{
+    transform: rotateY(0) rotateZ(0);
+}
+
+.card 
+{
+    position: relative;
+    width: 50px;
+    height:50px;
+    cursor: pointer;
+}
+
+.card 
+{
+    
+    font-size: 40px;
+    display: flex;
+    justify-content: center;  /* Horizontal alignment */
+    align-items: center;      /* Vertical alignment */
+}  
+
+.card-front, .card-back 
+{
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #ede8e8;
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.card-back 
+{
+    transform: rotateY(180deg) rotateZ(50deg);
+    font-size: 36px;  /* Set emoji size */
+    user-select: none;
+    text-align: center;
+    background: #FDF8E6;
+    /* Adjust position */
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: flex-start; /* Align emojis to the top */
+    padding-top: 0px; /* Adjust padding to move it upward */
+}
+
+.card.flipped .card-front 
+{
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back 
+{
+    transform: rotateY(0) rotateZ(0);
+}
+
+.win 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #FDF8E6;
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.win-text
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Harrington;
+    font-size: 21pt;
+    color: #5C4033;
+    font-weight: bold;
+}
+
+.highlight 
+{
+    font-family: Harrington;
+    font-weight: bold;
+    color:  #8b73be;
+}

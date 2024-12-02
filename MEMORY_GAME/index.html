@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game in JavaScript</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Main container for heading and background -->
+    <div class="head">
+            <b><i>MEMORY GAME🧠</i></b>
+            <br>
+    </div>
+
+    <div class="game">
+        <div class="controls">
+            <br>
+            <button id="btn" class="">Start</button>
+            <div class="stats">
+                <div class="moves"><b>0 moves</b></div>
+                <div class="timer">Time: 0 sec</div>
+            </div>
+        </div>
+
+        <div class="board-container">
+            <div class="board" data-dimension="8">
+                <!-- Game board content will be populated dynamically via JS -->
+            </div>
+            <div class="win">You Won!!!🏆</div>
+        </div>
+
+        <div class="imoji"></div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="game.js"></script>
+</body>
+</html>
